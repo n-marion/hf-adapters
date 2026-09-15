@@ -129,6 +129,13 @@ jobs:
   run-tests:
     needs: [detect-label]
     uses: ./.github/workflows/_test_matrix.yaml
+    # Pass caller secrets down so the reusable workflow's `HF_TOKEN: ${{
+    # secrets.HF_TOKEN }}` steps (gated models: Llama etc.) authenticate. A
+    # reusable workflow does not inherit the caller's secrets automatically; an
+    # undeclared secret resolves to the empty string there, silently failing
+    # only the gated-model legs. (No effect for fork PRs, which GitHub denies
+    # secrets regardless.)
+    secrets: inherit
     with:
       image_label: ${{ inputs.runner_label || 'image_torch_spyre' }}
       extra_test_flags: -vvv -s
