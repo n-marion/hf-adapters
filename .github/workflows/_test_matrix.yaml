@@ -503,6 +503,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -574,6 +575,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -641,6 +643,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -708,6 +711,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -769,6 +773,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -831,6 +836,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -899,6 +905,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -964,6 +971,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1087,6 +1095,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1151,6 +1160,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1215,6 +1225,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1279,6 +1290,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1343,6 +1355,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1428,6 +1441,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1501,6 +1515,7 @@ jobs:
           uv_groups: "dev spyre test oot"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1686,6 +1701,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1741,6 +1757,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1795,6 +1812,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1849,6 +1867,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1903,6 +1922,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -1953,6 +1973,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -2007,6 +2028,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -2061,6 +2083,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -2115,6 +2138,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -2168,6 +2192,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -2221,6 +2246,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -2274,6 +2300,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -2327,6 +2354,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -2380,6 +2408,7 @@ jobs:
           uv_groups: "dev spyre test"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info
@@ -2440,6 +2469,7 @@ jobs:
           uv_groups: "dev spyre test oot"
           ref: ${{ inputs.ref }}
           repository: ${{ inputs.repository }}
+          hf_token: ${{ secrets.HF_TOKEN }}
 
       - name: Gather runner info
         uses: ./.github/actions/gather-runner-info

@@ -21,6 +21,14 @@ inputs:
       ($GITHUB_SERVER_URL/$GITHUB_REPOSITORY). Set by the Test-With: flow.
     required: false
     default: ''
+  hf_token:
+    description: >
+      HF Hub token, forwarded from the caller's secrets.HF_TOKEN so this action
+      can log a non-reversible fingerprint proving the token reached the runner
+      (see the "Verify HF_TOKEN" step). Empty on fork PRs (GitHub withholds
+      secrets there) -- the step then reports it as empty rather than failing.
+    required: false
+    default: ''
 outputs:
   target_sha:
     description: The resolved commit SHA that was checked out
@@ -88,6 +96,21 @@ runs:
       with:
         verbose: 'true'
 
+    # Runs in every test job (each one builds via this action), so this single
+    # step logs the HF_TOKEN status for ALL suites. Prints only a non-reversible
+    # SHA-256 fingerprint + length, never the token itself -- enough to confirm
+    # the secret reached the runner and to tell two tokens apart across runs.
+    - name: Verify HF_TOKEN
+      shell: bash
+      env:
+        HF_TOKEN: ${{ inputs.hf_token }}
+      run: |
+        if [[ -n "$HF_TOKEN" ]]; then
+          FP="$(printf '%s' "$HF_TOKEN" | sha256sum | cut -c1-12)"
+          echo "HF_TOKEN is set (length=${#HF_TOKEN}, sha256=${FP}...)"
+        else
+          echo "HF_TOKEN is EMPTY (unauthenticated HF Hub access -- expected on fork PRs)"
+        fi
 
     - name: Build hf-adapters
       shell: bash
