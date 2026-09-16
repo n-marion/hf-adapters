@@ -356,6 +356,25 @@ jobs:
           name: weekly-shards
           path: shards
 
+      # Confirm HF_TOKEN reaches this scan job as a working credential. Never
+      # prints the token itself, only presence/length + a sha256 fingerprint,
+      # and the whoami owner. A whoami failure is non-fatal (network / revoked
+      # token must not fail the scan).
+      - name: Verify HF_TOKEN
+        run: |
+          if [[ -n "$HF_TOKEN" ]]; then
+            FP="$(printf '%s' "$HF_TOKEN" | sha256sum | cut -c1-12)"
+            echo "HF_TOKEN is set (length=${#HF_TOKEN}, sha256=${FP}...)"
+            WHOAMI="$(curl -sf https://huggingface.co/api/whoami-v2 -H "Authorization: Bearer $HF_TOKEN" || true)"
+            if [[ -n "$WHOAMI" ]]; then
+              echo "$WHOAMI" | python3 -c "import sys, json; d = json.load(sys.stdin); print(f\"HF_TOKEN owner: {d.get('name', '<unknown>')} (type={d.get('type', '<unknown>')})\")" || echo "HF_TOKEN owner: <could not parse whoami response>"
+            else
+              echo "HF_TOKEN owner: <whoami request failed (network or invalid token)>"
+            fi
+          else
+            echo "HF_TOKEN is EMPTY (unauthenticated HF Hub access -- expected on fork PRs)"
+          fi
+
       # Fail fast if ClickHouse secrets are missing/wrong. Never prints
       # secret values, only presence/length and a live SELECT 1.
       - name: Verify ClickHouse connection
@@ -445,6 +464,25 @@ jobs:
           name: weekly-shards
           path: shards
 
+      # Confirm HF_TOKEN reaches this scan job as a working credential. Never
+      # prints the token itself, only presence/length + a sha256 fingerprint,
+      # and the whoami owner. A whoami failure is non-fatal (network / revoked
+      # token must not fail the scan).
+      - name: Verify HF_TOKEN
+        run: |
+          if [[ -n "$HF_TOKEN" ]]; then
+            FP="$(printf '%s' "$HF_TOKEN" | sha256sum | cut -c1-12)"
+            echo "HF_TOKEN is set (length=${#HF_TOKEN}, sha256=${FP}...)"
+            WHOAMI="$(curl -sf https://huggingface.co/api/whoami-v2 -H "Authorization: Bearer $HF_TOKEN" || true)"
+            if [[ -n "$WHOAMI" ]]; then
+              echo "$WHOAMI" | python3 -c "import sys, json; d = json.load(sys.stdin); print(f\"HF_TOKEN owner: {d.get('name', '<unknown>')} (type={d.get('type', '<unknown>')})\")" || echo "HF_TOKEN owner: <could not parse whoami response>"
+            else
+              echo "HF_TOKEN owner: <whoami request failed (network or invalid token)>"
+            fi
+          else
+            echo "HF_TOKEN is EMPTY (unauthenticated HF Hub access -- expected on fork PRs)"
+          fi
+
       # Fail fast if ClickHouse secrets are missing/wrong. Never prints
       # secret values, only presence/length and a live SELECT 1.
       - name: Verify ClickHouse connection
@@ -533,6 +571,25 @@ jobs:
         with:
           name: weekly-shards
           path: shards
+
+      # Confirm HF_TOKEN reaches this scan job as a working credential. Never
+      # prints the token itself, only presence/length + a sha256 fingerprint,
+      # and the whoami owner. A whoami failure is non-fatal (network / revoked
+      # token must not fail the scan).
+      - name: Verify HF_TOKEN
+        run: |
+          if [[ -n "$HF_TOKEN" ]]; then
+            FP="$(printf '%s' "$HF_TOKEN" | sha256sum | cut -c1-12)"
+            echo "HF_TOKEN is set (length=${#HF_TOKEN}, sha256=${FP}...)"
+            WHOAMI="$(curl -sf https://huggingface.co/api/whoami-v2 -H "Authorization: Bearer $HF_TOKEN" || true)"
+            if [[ -n "$WHOAMI" ]]; then
+              echo "$WHOAMI" | python3 -c "import sys, json; d = json.load(sys.stdin); print(f\"HF_TOKEN owner: {d.get('name', '<unknown>')} (type={d.get('type', '<unknown>')})\")" || echo "HF_TOKEN owner: <could not parse whoami response>"
+            else
+              echo "HF_TOKEN owner: <whoami request failed (network or invalid token)>"
+            fi
+          else
+            echo "HF_TOKEN is EMPTY (unauthenticated HF Hub access -- expected on fork PRs)"
+          fi
 
       # Fail fast if ClickHouse secrets are missing/wrong. Never prints
       # secret values, only presence/length and a live SELECT 1.
