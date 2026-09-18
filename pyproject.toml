@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [build-system]
-requires = ["hatchling", "hatch-vcs"]
+requires = ["hatchling", "hatch-vcs", "setuptools_scm>=10", "regex"]
 build-backend = "build_backend"
 backend-path  = ["."]
 
